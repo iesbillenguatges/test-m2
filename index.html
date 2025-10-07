@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Test Mòdul 2 - Còmput al núvol (AWS)</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.5;padding:20px;max-width:900px;margin:0 auto;color:#0b1221}
+    h1{font-size:1.6rem;margin-bottom:0.25rem}
+    p.lead{color:#334155}
+    form{margin-top:1rem}
+    fieldset{border:1px solid #e2e8f0;padding:16px;border-radius:8px;margin-bottom:12px}
+    legend{font-weight:600}
+    .options{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+    label.option{display:flex;gap:10px;align-items:flex-start}
+    .controls{display:flex;gap:8px;margin:16px 0}
+    button{background:#0ea5a4;color:white;border:none;padding:10px 14px;border-radius:8px;font-weight:600;cursor:pointer}
+    button.secondary{background:#64748b}
+    .result{margin-top:16px;padding:12px;border-radius:8px}
+    .correct{background:#dcfce7;border:1px solid #86efac}
+    .wrong{background:#ffefef;border:1px solid #fca5a5}
+    .explain{font-size:0.95rem;color:#0f172a;margin-top:8px}
+    .score{font-size:1.1rem;font-weight:700}
+    .hidden{display:none}
+    .answer-key{margin-top:12px;background:#f8fafc;border:1px solid #e2e8f0;padding:12px;border-radius:8px}
+  </style>
+</head>
+<body>
+  <h1>Test Mòdul 2 – Còmput al núvol (AWS)</h1>
+  <p class="lead">Marca una opció per cada pregunta. Quan acabis fes clic a <strong>Corregir</strong> per veure els encerts i explicacions.</p>
+
+  <form id="quiz">
+
+    <!-- Questions 1-20 -->
+
+    <fieldset data-id="1">
+      <legend>1. Quina de les següents opcions descriu millor el còmput al núvol?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q1" value="a"> a) Ús de servidors físics propis</label>
+        <label class="option"><input type="radio" name="q1" value="b"> b) Accés a petició a recursos de TI a través d’internet</label>
+        <label class="option"><input type="radio" name="q1" value="c"> c) Instal·lació de programari local en cada equip</label>
+        <label class="option"><input type="radio" name="q1" value="d"> d) Comprar servidors i mantenir-los en un centre de dades privat</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="2">
+      <legend>2. Un dels principals avantatges del còmput al núvol és:</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q2" value="a"> a) Alts costos inicials</label>
+        <label class="option"><input type="radio" name="q2" value="b"> b) Escalabilitat a petició</label>
+        <label class="option"><input type="radio" name="q2" value="c"> c) Dependència de maquinari físic propi</label>
+        <label class="option"><input type="radio" name="q2" value="d"> d) Rigidesa en la capacitat de còmput</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="3">
+      <legend>3. Quin model de desplegament de núvol és administrat completament per AWS?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q3" value="a"> a) Núvol privat</label>
+        <label class="option"><input type="radio" name="q3" value="b"> b) Núvol híbrid</label>
+        <label class="option"><input type="radio" name="q3" value="c"> c) Núvol públic</label>
+        <label class="option"><input type="radio" name="q3" value="d"> d) Servidors locals</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="4">
+      <legend>4. Quin dels següents serveis és un exemple de còmput a AWS?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q4" value="a"> a) Amazon S3</label>
+        <label class="option"><input type="radio" name="q4" value="b"> b) Amazon EC2</label>
+        <label class="option"><input type="radio" name="q4" value="c"> c) Amazon RDS</label>
+        <label class="option"><input type="radio" name="q4" value="d"> d) AWS CloudTrail</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="5">
+      <legend>5. Què significa que AWS tinga un model de “pagament per ús”?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q5" value="a"> a) Es paga una quota fixa mensual</label>
+        <label class="option"><input type="radio" name="q5" value="b"> b) Es paga només pel que es consumeix</label>
+        <label class="option"><input type="radio" name="q5" value="c"> c) Es paga sempre un any per avançat</label>
+        <label class="option"><input type="radio" name="q5" value="d"> d) No cal pagar mai</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="6">
+      <legend>6. La característica del núvol que permet ajustar recursos segons la demanda és:</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q6" value="a"> a) Disponibilitat</label>
+        <label class="option"><input type="radio" name="q6" value="b"> b) Elasticitat</label>
+        <label class="option"><input type="radio" name="q6" value="c"> c) Fiabilitat</label>
+        <label class="option"><input type="radio" name="q6" value="d"> d) Regionalitat</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="7">
+      <legend>7. Quin servei d’AWS permet executar contenidors sense administrar servidors?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q7" value="a"> a) Amazon EC2</label>
+        <label class="option"><input type="radio" name="q7" value="b"> b) AWS Lambda</label>
+        <label class="option"><input type="radio" name="q7" value="c"> c) Amazon ECS amb Fargate</label>
+        <label class="option"><input type="radio" name="q7" value="d"> d) AWS CloudWatch</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="8">
+      <legend>8. Quin és un exemple de servei “serverless” a AWS?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q8" value="a"> a) Amazon EC2</label>
+        <label class="option"><input type="radio" name="q8" value="b"> b) AWS Lambda</label>
+        <label class="option"><input type="radio" name="q8" value="c"> c) Amazon S3 Glacier</label>
+        <label class="option"><input type="radio" name="q8" value="d"> d) Amazon VPC</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="9">
+      <legend>9. Quina és la principal diferència entre Amazon EC2 i AWS Lambda?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q9" value="a"> a) EC2 és serverless i Lambda no</label>
+        <label class="option"><input type="radio" name="q9" value="b"> b) Lambda escala automàticament i EC2 requereix gestió de capacitat</label>
+        <label class="option"><input type="radio" name="q9" value="c"> c) Lambda només permet bases de dades i EC2 no</label>
+        <label class="option"><input type="radio" name="q9" value="d"> d) EC2 no es pot monitoritzar i Lambda sí</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="10">
+      <legend>10. Quin avantatge ofereix el còmput al núvol respecte als centres de dades locals?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q10" value="a"> a) Major cost fix</label>
+        <label class="option"><input type="radio" name="q10" value="b"> b) Capacitat il·limitada a petició</label>
+        <label class="option"><input type="radio" name="q10" value="c"> c) Temps de desplegament més llarg</label>
+        <label class="option"><input type="radio" name="q10" value="d"> d) Necessitat de gestionar maquinari</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="11">
+      <legend>11. Quin model de servei permet centrar-se en el codi sense preocupar-se d’infraestructura?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q11" value="a"> a) IaaS</label>
+        <label class="option"><input type="radio" name="q11" value="b"> b) PaaS</label>
+        <label class="option"><input type="radio" name="q11" value="c"> c) SaaS</label>
+        <label class="option"><input type="radio" name="q11" value="d"> d) Colocation</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="12">
+      <legend>12. En el model IaaS, quina responsabilitat segueix tenint el client?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q12" value="a"> a) Gestió del maquinari físic</label>
+        <label class="option"><input type="radio" name="q12" value="b"> b) Gestió del sistema operatiu i aplicacions</label>
+        <label class="option"><input type="radio" name="q12" value="c"> c) Seguretat física dels centres de dades</label>
+        <label class="option"><input type="radio" name="q12" value="d"> d) Alimentació elèctrica i refrigeració</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="13">
+      <legend>13. Quin model de servei ofereix aplicacions preparades per ser usades a través d’internet?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q13" value="a"> a) IaaS</label>
+        <label class="option"><input type="radio" name="q13" value="b"> b) PaaS</label>
+        <label class="option"><input type="radio" name="q13" value="c"> c) SaaS</label>
+        <label class="option"><input type="radio" name="q13" value="d"> d) Serverless</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="14">
+      <legend>14. Quin d’aquests exemples representa un servei SaaS?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q14" value="a"> a) Gmail</label>
+        <label class="option"><input type="radio" name="q14" value="b"> b) Amazon EC2</label>
+        <label class="option"><input type="radio" name="q14" value="c"> c) AWS Lambda</label>
+        <label class="option"><input type="radio" name="q14" value="d"> d) Amazon DynamoDB</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="15">
+      <legend>15. Quina opció descriu millor l’elasticitat al núvol?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q15" value="a"> a) Usar només una quantitat fixa de recursos</label>
+        <label class="option"><input type="radio" name="q15" value="b"> b) Ajustar automàticament recursos quan canvia la càrrega</label>
+        <label class="option"><input type="radio" name="q15" value="c"> c) Reservar capacitat fixa per avançat</label>
+        <label class="option"><input type="radio" name="q15" value="d"> d) Reduir sempre els costos al mínim fix</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="16">
+      <legend>16. Quin servei d’AWS permet aprovisionar màquines virtuals a petició?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q16" value="a"> a) Amazon S3</label>
+        <label class="option"><input type="radio" name="q16" value="b"> b) AWS IAM</label>
+        <label class="option"><input type="radio" name="q16" value="c"> c) Amazon EC2</label>
+        <label class="option"><input type="radio" name="q16" value="d"> d) Amazon Route 53</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="17">
+      <legend>17. Un desenvolupador que necessita executar un codi curt com a resposta a un esdeveniment hauria d’usar:</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q17" value="a"> a) Amazon RDS</label>
+        <label class="option"><input type="radio" name="q17" value="b"> b) AWS Lambda</label>
+        <label class="option"><input type="radio" name="q17" value="c"> c) Amazon EC2</label>
+        <label class="option"><input type="radio" name="q17" value="d"> d) Amazon VPC</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="18">
+      <legend>18. Quin avantatge tenen els serveis gestionats al núvol?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q18" value="a"> a) El client gestiona tota la infraestructura</label>
+        <label class="option"><input type="radio" name="q18" value="b"> b) AWS s’encarrega del manteniment i actualitzacions</label>
+        <label class="option"><input type="radio" name="q18" value="c"> c) Els usuaris paguen sempre el mateix</label>
+        <label class="option"><input type="radio" name="q18" value="d"> d) La seguretat depèn només del client</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="19">
+      <legend>19. Quin model combina infraestructura local amb serveis al núvol?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q19" value="a"> a) Núvol privat</label>
+        <label class="option"><input type="radio" name="q19" value="b"> b) Núvol híbrid</label>
+        <label class="option"><input type="radio" name="q19" value="c"> c) Núvol públic</label>
+        <label class="option"><input type="radio" name="q19" value="d"> d) SaaS</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="20">
+      <legend>20. Quin servei d’AWS permet executar aplicacions en contenidors de manera totalment gestionada?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q20" value="a"> a) AWS Lambda</label>
+        <label class="option"><input type="radio" name="q20" value="b"> b) Amazon ECS amb Fargate</label>
+        <label class="option"><input type="radio" name="q20" value="c"> c) Amazon S3</label>
+        <label class="option"><input type="radio" name="q20" value="d"> d) AWS IAM</label>
+      </div>
+    </fieldset>
+
+    <div class="controls">
+      <button type="button" id="check">Corregir</button>
+      <button type="button" id="reset" class="secondary">Reiniciar</button>
+    </div>
+
+    <div id="output" class="hidden"></div>
+
+  </form>
+
+  <script>
+    (function(){
+      // Respostes correctes i justificacions (indexades per pregunta)
+      const answers = {
+        q1: {ans:'b', explain:'La definició de cloud computing: recursos informàtics a petició via Internet.'},
+        q2: {ans:'b', explain:'Escalabilitat a petició és un dels avantatges més importants del núvol.'},
+        q3: {ans:'c', explain:'La núvol públic està gestionat pel proveïdor (AWS) i compartit entre clients.'},
+        q4: {ans:'b', explain:'Amazon EC2 proporciona instàncies de còmput (màquines virtuals).'},
+        q5: {ans:'b', explain:'Amb pagament per ús es paga només pels recursos consumits.'},
+        q6: {ans:'b', explain:'Elasticitat = ajustar recursos (ampliar/reduir) en funció de la demanda.'},
+        q7: {ans:'c', explain:'ECS amb Fargate permet executar contenidors sense gestionar servidors subjacents.'},
+        q8: {ans:'b', explain:'AWS Lambda és un servei serverless per executar funcions/ codi sense servidors.'},
+        q9: {ans:'b', explain:'Lambda escala automàticament segons esdeveniments; EC2 requereix gestió d?instàncies.'},
+        q10: {ans:'b', explain:'El núvol ofereix capacitat a petició, pràcticament il·limitada segons necessita l’usuari.'},
+        q11: {ans:'b', explain:'PaaS ofereix una plataforma gestionada per centrar-se en el codi i no la infraestructura.'},
+        q12: {ans:'b', explain:'En IaaS el client gestiona el SO i aplicacions mentre el proveïdor gestiona el hardware.'},
+        q13: {ans:'c', explain:'SaaS són aplicacions acabades que s’utilitzen via Internet (ex: Gmail).'},
+        q14: {ans:'a', explain:'Gmail és un exemple típic de SaaS: aplicació final entregada per internet.'},
+        q15: {ans:'b', explain:'Elasticitat vol dir ajustar automàticament recursos amb la variació de la càrrega.'},
+        q16: {ans:'c', explain:'Amazon EC2 proporciona màquines virtuals a petició.'},
+        q17: {ans:'b', explain:'AWS Lambda està dissenyat per executar codi curt en resposta a esdeveniments.'},
+        q18: {ans:'b', explain:'Els serveis gestionats redueixen la càrrega operativa; el proveïdor fa manteniment i actualitzacions.'},
+        q19: {ans:'b', explain:'Núvol híbrid combina entorns on-premises amb recursos al núvol.'},
+        q20: {ans:'b', explain:'ECS amb Fargate és l’opció gestionada per contenidors (serverless per contenidors).'}
+      };
+
+      const form = document.getElementById('quiz');
+      const out = document.getElementById('output');
+      const checkBtn = document.getElementById('check');
+      const resetBtn = document.getElementById('reset');
+
+      function getSelected(name){
+        const els = form.elements[name];
+        if(!els) return null;
+        for(const el of els){ if(el.checked) return el.value; }
+        return null;
+      }
+
+      function clearHighlights(){
+        document.querySelectorAll('fieldset').forEach(fs=>{ fs.classList.remove('correct','wrong'); fs.querySelectorAll('.explain')?.forEach(n=>n.remove()); });
+      }
+
+      checkBtn.addEventListener('click',()=>{
+        clearHighlights();
+        let score = 0; let total = 0; let unanswered = 0;
+        for(let i=1;i<=20;i++){
+          const name = 'q'+i; total++;
+          const selected = getSelected(name);
+          if(!selected){ unanswered++; }
+          const field = document.querySelector('fieldset[data-id="'+i+'"]');
+          const correct = answers[name].ans;
+          // mark
+          if(selected === correct){ score++; field.classList.add('correct'); }
+          else{ field.classList.add('wrong'); }
+          // add explanation
+          const expl = document.createElement('div');
+          expl.className = 'explain';
+          expl.innerHTML = '<strong>Resposta correcta:</strong> ' + correct + '. ' + answers[name].explain;
+          field.appendChild(expl);
+        }
+
+        out.className = 'result';
+        out.innerHTML = '<div class="score">Has encertat ' + score + ' de ' + total + '.</div>' +
+                        (unanswered>0?('<div style="margin-top:6px;color:#334155">No contestades: '+unanswered+'</div>'):'') +
+                        '<div class="answer-key">Pots revisar cada pregunta amb la justificació que apareix baix de cada bloc.</div>';
+      });
+
+      resetBtn.addEventListener('click',()=>{
+        form.reset(); clearHighlights(); out.className='hidden'; out.innerHTML='';
+      });
+
+    })();
+  </script>
+</body>
+</html>
+
