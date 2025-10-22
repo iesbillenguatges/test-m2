@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Test Mòdul 3 - Infraestructura global i fiabilitat (AWS)</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.5;padding:20px;max-width:900px;margin:0 auto;color:#0b1221}
+    h1{font-size:1.6rem;margin-bottom:0.25rem}
+    p.lead{color:#334155}
+    form{margin-top:1rem}
+    fieldset{border:1px solid #e2e8f0;padding:16px;border-radius:8px;margin-bottom:12px}
+    legend{font-weight:600}
+    .options{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+    label.option{display:flex;gap:10px;align-items:flex-start}
+    .controls{display:flex;gap:8px;margin:16px 0}
+    button{background:#0ea5a4;color:white;border:none;padding:10px 14px;border-radius:8px;font-weight:600;cursor:pointer}
+    button.secondary{background:#64748b}
+    .result{margin-top:16px;padding:12px;border-radius:8px}
+    .correct{background:#dcfce7;border:1px solid #86efac}
+    .wrong{background:#ffefef;border:1px solid #fca5a5}
+    .explain{font-size:0.95rem;color:#0f172a;margin-top:8px}
+    .score{font-size:1.1rem;font-weight:700}
+    .hidden{display:none}
+    .answer-key{margin-top:12px;background:#f8fafc;border:1px solid #e2e8f0;padding:12px;border-radius:8px}
+  </style>
+</head>
+<body>
+  <h1>Test Mòdul 3 – Infraestructura global i fiabilitat (AWS)</h1>
+  <p class="lead">Marca una opció per cada pregunta. Quan acabis fes clic a <strong>Corregir</strong> per veure els encerts i explicacions.</p>
+
+  <form id="quiz">
+
+    <!-- Questions 1-20 -->
+
+    <fieldset data-id="1">
+      <legend>1. Què és una <strong>regió</strong> d’AWS?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q1" value="a"> a) Un únic centre de dades físic</label>
+        <label class="option"><input type="radio" name="q1" value="b"> b) Una ubicació geogràfica composta per diverses zones de disponibilitat</label>
+        <label class="option"><input type="radio" name="q1" value="c"> c) Un mecanisme de xarxa per equilibrar trànsit</label>
+        <label class="option"><input type="radio" name="q1" value="d"> d) Un tipus d’emmagatzematge d’alta durabilitat</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="2">
+      <legend>2. Quina és la finalitat principal de les <strong>Zones de Disponibilitat (AZ)</strong>?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q2" value="a"> a) Localitzar servidors d’usuaris finals</label>
+        <label class="option"><input type="radio" name="q2" value="b"> b) Proporcionar aïllament de fallides dins d’una regió</label>
+        <label class="option"><input type="radio" name="q2" value="c"> c) Servir contingut estàtic a baixes latències globalment</label>
+        <label class="option"><input type="radio" name="q2" value="d"> d) Gestionar identitats i accessos</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="3">
+      <legend>3. Què és un <strong>edge location</strong> (ubicació edge) a AWS?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q3" value="a"> a) Un centre de dades per executar RDS</label>
+        <label class="option"><input type="radio" name="q3" value="b"> b) Una ubicació per a serveis de CDN i capacitació de latència baixa (CloudFront)</label>
+        <label class="option"><input type="radio" name="q3" value="c"> c) Un tipus d’AZ especialitzat</label>
+        <label class="option"><input type="radio" name="q3" value="d"> d) Un backup geogràfic per S3</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="4">
+      <legend>4. Quin concepte descriu millor la <strong>durabilitat</strong> d’un servei d’emmagatzematge com S3?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q4" value="a"> a) Temps de recuperació després d’una fallada</label>
+        <label class="option"><input type="radio" name="q4" value="b"> b) Probabilitat que les dades es perdin en un període determinat</label>
+        <label class="option"><input type="radio" name="q4" value="c"> c) Latència d’accés a les dades</label>
+        <label class="option"><input type="radio" name="q4" value="d"> d) Cost d’emmagatzematge mensual</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="5">
+      <legend>5. Quin estratègia de <strong>disaster recovery</strong> ofereix el menor cost però un temps de recuperació més alt?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q5" value="a"> a) Active-active multi-regió</label>
+        <label class="option"><input type="radio" name="q5" value="b"> b) Pilot light</label>
+        <label class="option"><input type="radio" name="q5" value="c"> c) Warm standby complet</label>
+        <label class="option"><input type="radio" name="q5" value="d"> d) Backup i restore (cold) </label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="6">
+      <legend>6. Què significa <strong>RTO</strong> (Recovery Time Objective)?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q6" value="a"> a) Temps màxim acceptat per recuperar una aplicació després d’una incidència</label>
+        <label class="option"><input type="radio" name="q6" value="b"> b) Quantitat de dades perdudes tolerable</label>
+        <label class="option"><input type="radio" name="q6" value="c"> c) Cost de recuperació estimat</label>
+        <label class="option"><input type="radio" name="q6" value="d"> d) Ràtio d’escalabilitat automàtica</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="7">
+      <legend>7. Què mesura <strong>RPO</strong> (Recovery Point Objective)?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q7" value="a"> a) Temps de resposta d’una petició d’API</label>
+        <label class="option"><input type="radio" name="q7" value="b"> b) Quantitat de dades (temps) que es pot perdre en un desastre</label>
+        <label class="option"><input type="radio" name="q7" value="c"> c) Durabilitat d’emmagatzematge a llarg termini</label>
+        <label class="option"><input type="radio" name="q7" value="d"> d) Nombre d’AZ per regió</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="8">
+      <legend>8. Quin servei AWS ajuda a distribuir trànsit global amb baixes latències i failover?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q8" value="a"> a) Amazon S3</label>
+        <label class="option"><input type="radio" name="q8" value="b"> b) AWS Global Accelerator</label>
+        <label class="option"><input type="radio" name="q8" value="c"> c) Amazon RDS</label>
+        <label class="option"><input type="radio" name="q8" value="d"> d) AWS IAM</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="9">
+      <legend>9. Quin servei s’utilitza principalment per replicar objectes S3 entre regions?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q9" value="a"> a) S3 Cross-Region Replication (CRR)</label>
+        <label class="option"><input type="radio" name="q9" value="b"> b) EBS Snapshot</label>
+        <label class="option"><input type="radio" name="q9" value="c"> c) RDS Multi-AZ</label>
+        <label class="option"><input type="radio" name="q9" value="d"> d) CloudFront Origin Failover</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="10">
+      <legend>10. Quina pràctica és recomanada per millorar la tolerància a fallades d’una aplicació web?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q10" value="a"> a) Executar totes les instàncies en una sola AZ</label>
+        <label class="option"><input type="radio" name="q10" value="b"> b) Distribuir instàncies entre diverses AZ i utilitzar balanceig de càrrega</label>
+        <label class="option"><input type="radio" name="q10" value="c"> c) Tenir només una base de dades local sense rèpliques</label>
+        <label class="option"><input type="radio" name="q10" value="d"> d) Evitar l’ús d’Auto Scaling</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="11">
+      <legend>11. Quin servei ofereix rèplices de bases de dades automàtiques per alta disponibilitat a RDS?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q11" value="a"> a) RDS Read Replica</label>
+        <label class="option"><input type="radio" name="q11" value="b"> b) RDS Multi-AZ</label>
+        <label class="option"><input type="radio" name="q11" value="c"> c) EBS Volume</label>
+        <label class="option"><input type="radio" name="q11" value="d"> d) S3 Versioning</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="12">
+      <legend>12. Quina afirmació sobre EBS (volums d’EBS) és correcta respecte la disponibilitat?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q12" value="a"> a) Un volum EBS està replicat automàticament entre regions</label>
+        <label class="option"><input type="radio" name="q12" value="b"> b) Un volum EBS està lligat a una única AZ i no s’auto-replica entre AZ</label>
+        <label class="option"><input type="radio" name="q12" value="c"> c) EBS no es pot utilitzar amb instàncies EC2</label>
+        <label class="option"><input type="radio" name="q12" value="d"> d) EBS és un servei serverless per executar funcions</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="13">
+      <legend>13. Quin element del disseny ajuda a reduir el punt únic de fallada?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q13" value="a"> a) Utilitzar una sola instància EC2 per tot el tràfic</label>
+        <label class="option"><input type="radio" name="q13" value="b"> b) Duplicar components crítics i distribuir-los</label>
+        <label class="option"><input type="radio" name="q13" value="c"> c) Guardar contrasenyes en text pla</label>
+        <label class="option"><input type="radio" name="q13" value="d"> d) Desactivar CloudWatch</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="14">
+      <legend>14. Quina funcionalitat ofereix Amazon Route 53 per la fiabilitat a nivell de DNS?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q14" value="a"> a) Health checks i routing basat en l’estat per fer failover</label>
+        <label class="option"><input type="radio" name="q14" value="b"> b) Emmagatzematge d’objectes a llarg termini</label>
+        <label class="option"><input type="radio" name="q14" value="c"> c) Execució de contenidors sense servidors</label>
+        <label class="option"><input type="radio" name="q14" value="d"> d) Gestió d’identitats i permisos</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="15">
+      <legend>15. Quin concepte forma part de les millors pràctiques per la fiabilitat segons el Well-Architected Framework?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q15" value="a"> a) No provar plans de recuperació</label>
+        <label class="option"><input type="radio" name="q15" value="b"> b) Automatitzar recuperacions i fer proves periòdiques</label>
+        <label class="option"><input type="radio" name="q15" value="c"> c) Dependre de components no monitoritzats</label>
+        <label class="option"><input type="radio" name="q15" value="d"> d) Fer tots els canvis en producció sense entorns de prova</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="16">
+      <legend>16. Quina és la millor opció per distribuir contingut estàtic a usuaris globals amb baixa latència?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q16" value="a"> a) Amazon CloudFront (CDN)</label>
+        <label class="option"><input type="radio" name="q16" value="b"> b) Crear moltes copyes d’EBS manualment</label>
+        <label class="option"><input type="radio" name="q16" value="c"> c) Utilitzar una sola instància EC2 centralitzada</label>
+        <label class="option"><input type="radio" name="q16" value="d"> d) Desactivar caching</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="17">
+      <legend>17. Quin avantatge ofereix RDS Multi-AZ?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q17" value="a"> a) Millora la disponibilitat amb rèplica síncrona automàtica en una altra AZ</label>
+        <label class="option"><input type="radio" name="q17" value="b"> b) Replica automàticament entre comptes d’AWS</label>
+        <label class="option"><input type="radio" name="q17" value="c"> c) Serveix per accelerar el CDN</label>
+        <label class="option"><input type="radio" name="q17" value="d"> d) Proporciona emmagatzematge objecte multi-regió</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="18">
+      <legend>18. Quin concepte ajuda a gestionar la capacitat i mantenir disponibilitat durant pics de trànsit?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q18" value="a"> a) Auto Scaling per ajustar el nombre d’instàncies</label>
+        <label class="option"><input type="radio" name="q18" value="b"> b) Augmentar manualment una instància en hores punta</label>
+        <label class="option"><input type="radio" name="q18" value="c"> c) Apagar balancejadors de càrrega</label>
+        <label class="option"><input type="radio" name="q18" value="d"> d) Desactivar rèpliques de lectura</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="19">
+      <legend>19. Quin mecanisme és útil per conservar revisions i restaurar versions antigues d’objectes S3?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q19" value="a"> a) S3 Versioning</label>
+        <label class="option"><input type="radio" name="q19" value="b"> b) EBS Volume Resize</label>
+        <label class="option"><input type="radio" name="q19" value="c"> c) RDS Read Replica</label>
+        <label class="option"><input type="radio" name="q19" value="d"> d) Lambda Destinations</label>
+      </div>
+    </fieldset>
+
+    <fieldset data-id="20">
+      <legend>20. Quin indicador NO és típicament usat per monitoritzar la salut d’un servei?</legend>
+      <div class="options">
+        <label class="option"><input type="radio" name="q20" value="a"> a) Latència de resposta</label>
+        <label class="option"><input type="radio" name="q20" value="b"> b) Error rate (percentatge d’errors)</label>
+        <label class="option"><input type="radio" name="q20" value="c"> c) Utilització de CPU/memòria</label>
+        <label class="option"><input type="radio" name="q20" value="d"> d) Color de fons del CSS</label>
+      </div>
+    </fieldset>
+
+    <div class="controls">
+      <button type="button" id="check">Corregir</button>
+      <button type="button" id="reset" class="secondary">Reiniciar</button>
+    </div>
+
+    <div id="output" class="hidden"></div>
+
+  </form>
+
+  <script>
+    (function(){
+      // Respostes correctes i justificacions (indexades per pregunta)
+      const answers = {
+        q1: {ans:'b', explain:'Una regió és una ubicació geogràfica que conté diverses Zones de Disponibilitat (AZ).'},
+        q2: {ans:'b', explain:'Les AZ proporcionen aïllament entre centres de dades per reduir l’impacte de fallades locals.'},
+        q3: {ans:'b', explain:'Les edge locations s’utilitzen per a CDN i per reduir latència (CloudFront, Lambda@Edge).'},
+        q4: {ans:'b', explain:'Durabilitat fa referència a la probabilitat que les dades es mantinguin intactes i no es perdin.'},
+        q5: {ans:'d', explain:'Backup i restore (cold) és la opció amb menor cost però RTO alt (més temps per recuperar).'},
+        q6: {ans:'a', explain:'RTO és el temps màxim tolerable per restaurar un servei després d’una incidència.'},
+        q7: {ans:'b', explain:'RPO mesura la quantitat de dades (o el temps) que es pot perdre; per exemple, 1 hora d’RPO significa perdre fins a 1 hora de dades.'},
+        q8: {ans:'b', explain:'AWS Global Accelerator optimitza rutes i millora latència i disponibilitat global del trànsit d’aplicacions.'},
+        q9: {ans:'a', explain:'S3 Cross-Region Replication (CRR) replica objectes entre regions per tolerància a fallades/regió.'},
+        q10: {ans:'b', explain:'Distribuir instàncies entre diverses AZ i usar un balancejador (ELB) millora tolerància a fallades.'},
+        q11: {ans:'b', explain:'RDS Multi-AZ crea una rèplica síncrona automàtica a una altra AZ per alta disponibilitat.'},
+        q12: {ans:'b', explain:'Els volums EBS estan lligats a una única AZ; per protegir dades entre AZ cal snapshots o altres estratègies.'},
+        q13: {ans:'b', explain:'Duplicar components crítics (redundància) evita punts únics de fallada.'},
+        q14: {ans:'a', explain:'Route 53 ofereix health checks i diferents estratègies de routing per fer failover i millorar disponibilitat.'},
+        q15: {ans:'b', explain:'Automatitzar recuperacions i provar regularment són pràctiques clau de la fiabilitat segons Well-Architected.'},
+        q16: {ans:'a', explain:'CloudFront distribueix contingut a edge locations per servir-usuaris globals amb baixa latència.'},
+        q17: {ans:'a', explain:'RDS Multi-AZ utilitza rèplica síncrona en una altra AZ per augmentar la disponibilitat i facilitar failover automàtic.'},
+        q18: {ans:'a', explain:'Auto Scaling ajusta automàticament la capacitat per mantenir disponibilitat durant els pics.'},
+        q19: {ans:'a', explain:'S3 Versioning permet conservar versions antigues d’objectes i restaurar-les si cal.'},
+        q20: {ans:'d', explain:'El color de fons del CSS no és un indicador tècnic de salut del servei; s’utilitzen latència, error rate, utilització, etc.'}
+      };
+
+      const form = document.getElementById('quiz');
+      const out = document.getElementById('output');
+      const checkBtn = document.getElementById('check');
+      const resetBtn = document.getElementById('reset');
+
+      function getSelected(name){
+        const els = form.elements[name];
+        if(!els) return null;
+        for(const el of els){ if(el.checked) return el.value; }
+        return null;
+      }
+
+      function clearHighlights(){
+        document.querySelectorAll('fieldset').forEach(fs=>{ fs.classList.remove('correct','wrong'); fs.querySelectorAll('.explain')?.forEach(n=>n.remove()); });
+      }
+
+      checkBtn.addEventListener('click',()=>{
+        clearHighlights();
+        let score = 0; let total = 0; let unanswered = 0;
+        for(let i=1;i<=20;i++){
+          const name = 'q'+i; total++;
+          const selected = getSelected(name);
+          if(!selected){ unanswered++; }
+          const field = document.querySelector('fieldset[data-id="'+i+'"]');
+          const correct = answers[name].ans;
+          // mark
+          if(selected === correct){ score++; field.classList.add('correct'); }
+          else{ field.classList.add('wrong'); }
+          // add explanation
+          const expl = document.createElement('div');
+          expl.className = 'explain';
+          expl.innerHTML = '<strong>Resposta correcta:</strong> ' + correct + '. ' + answers[name].explain;
+          field.appendChild(expl);
+        }
+
+        out.className = 'result';
+        out.innerHTML = '<div class="score">Has encertat ' + score + ' de ' + total + '.</div>' +
+                        (unanswered>0?('<div style="margin-top:6px;color:#334155">No contestades: '+unanswered+'</div>'):'') +
+                        '<div class="answer-key">Pots revisar cada pregunta amb la justificació que apareix baix de cada bloc.</div>';
+      });
+
+      resetBtn.addEventListener('click',()=>{
+        form.reset(); clearHighlights(); out.className='hidden'; out.innerHTML='';
+      });
+
+    })();
+  </script>
+</body>
+</html>
