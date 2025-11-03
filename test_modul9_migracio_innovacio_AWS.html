@@ -1,360 +1,240 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Test Avançat Mòdul 9 – Migració i Innovació (AWS)</title>
-  <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.6;padding:20px;max-width:980px;margin:0 auto;color:#0b1221}
-    h1{font-size:1.7rem;margin-bottom:0.25rem}
-    p.lead{color:#334155}
-    form{margin-top:1rem}
-    fieldset{border:1px solid #e6eef6;padding:18px;border-radius:10px;margin-bottom:14px;background:#fff}
-    legend{font-weight:700;padding:0 6px}
-    .options{display:flex;flex-direction:column;gap:8px;margin-top:10px}
-    label.option{display:flex;gap:10px;align-items:flex-start}
-    .controls{display:flex;gap:10px;margin:20px 0}
-    button{background:#0ea5a4;color:white;border:none;padding:10px 16px;border-radius:10px;font-weight:700;cursor:pointer}
-    button.secondary{background:#64748b}
-    .result{margin-top:16px;padding:12px;border-radius:8px}
-    .correct{background:#e6ffef;border:1px solid #86efac}
-    .wrong{background:#fff0f0;border:1px solid #fca5a5}
-    .explain{font-size:0.95rem;color:#0f172a;margin-top:10px;padding-top:6px;border-top:1px dashed #e6eef6}
-    .score{font-size:1.15rem;font-weight:800}
-    .hidden{display:none}
-    .answer-key{margin-top:12px;background:#f8fafc;border:1px solid #e2e8f0;padding:12px;border-radius:8px}
-    small.hint{display:block;color:#475569;margin-top:6px}
-    footer{margin-top:22px;color:#475569;font-size:0.9rem}
-    @media (max-width:600px){ body{padding:14px} }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test Mòdul 9 – Migració i innovació (AWS)</title>
+<style>
+body {font-family: Arial, sans-serif; margin: 20px; background-color: #f8f9fa;}
+h1 {text-align: center; color: #2a4d69;}
+.question {margin-bottom: 15px; padding: 10px; background: #fff; border-radius: 8px; box-shadow: 0 0 4px rgba(0,0,0,0.1);}
+button {background-color: #2a4d69; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;}
+button:hover {background-color: #1d3557;}
+.result {margin-top: 20px; padding: 15px; background: #e3f2fd; border-left: 4px solid #2a4d69;}
+.correct {color: green; font-weight: bold;}
+.incorrect {color: red; font-weight: bold;}
+</style>
 </head>
 <body>
-  <h1>Test Avançat Mòdul 9 – Migració i Innovació (AWS)</h1>
-  <p class="lead">20 preguntes d’alt nivell sobre migració i innovació. Marca la millor opció i clica <strong>Corregir</strong> per obtenir la puntuació i explicacions tècniques.</p>
 
-  <form id="quiz">
+<h1>Test Mòdul 9 – Migració i innovació (AWS)</h1>
+<p>Respon les següents 20 preguntes i fes clic a <strong>Comprovar respostes</strong> per veure la puntuació i les explicacions.</p>
 
-    <!-- 1 -->
-    <fieldset data-id="1">
-      <legend>1. Tens una aplicació monolítica amb dependències internes forts i requisits de baixa latència. Quina estratègia de les “7R” és més adequada com a primer pas per reduir el risc i obtenir beneficis ràpids?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q1" value="a"> a) Rehost (lift-and-shift) per migrar tal qual a EC2</label>
-        <label class="option"><input type="radio" name="q1" value="b"> b) Refactor immediat per transformar en microserveis</label>
-        <label class="option"><input type="radio" name="q1" value="c"> c) Repurchase substituint per un SaaS equivalent</label>
-        <label class="option"><input type="radio" name="q1" value="d"> d) Replatform movent components a serveis gestionats (p. ex. RDS, ALB)</label>
-      </div>
-      <small class="hint">Pensa en risc, temps i dependències.</small>
-    </fieldset>
+<form id="quizForm">
 
-    <!-- 2 -->
-    <fieldset data-id="2">
-      <legend>2. En una migració de base de dades críticament activa, vols minimitzar el downtime i validar integritat abans del tall final. Quin patró i servei AWS combinaries?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q2" value="a"> a) Snapshot RDS + restauració en una instància nova</label>
-        <label class="option"><input type="radio" name="q2" value="b"> b) AWS DMS amb replicació contínua (CDC) i proves en paral·lel</label>
-        <label class="option"><input type="radio" name="q2" value="c"> c) Exportar CSV i importar amb scrips</label>
-        <label class="option"><input type="radio" name="q2" value="d"> d) Snowball Edge per transferència offline</label>
-      </div>
-    </fieldset>
+<!-- Les 20 preguntes -->
+<div class="question">
+<p><strong>1.</strong> Quin és l’objectiu principal d’una estratègia de migració al núvol d’AWS?</p>
+<label><input type="radio" name="q1" value="a"> Reduir el cost de la llicència de programari</label><br>
+<label><input type="radio" name="q1" value="b"> Millorar la seguretat física dels servidors</label><br>
+<label><input type="radio" name="q1" value="c"> Augmentar l’agilitat i la capacitat d’innovació de l’empresa</label><br>
+<label><input type="radio" name="q1" value="d"> Eliminar completament la necessitat de personal tècnic</label>
+</div>
 
-    <!-- 3 -->
-    <fieldset data-id="3">
-      <legend>3. Estàs planificant migrar centenars de VM amb heterogeneïtat d’OS i metrics variables. Quina combinació d’eines d’AWS usaries per descobrir, agrupar i orquestrar la migració?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q3" value="a"> a) AWS Application Discovery Service + Migration Hub + Server Migration Service</label>
-        <label class="option"><input type="radio" name="q3" value="b"> b) AWS Inspector + Macie + Control Tower</label>
-        <label class="option"><input type="radio" name="q3" value="c"> c) AWS Config + CloudTrail + CloudWatch</label>
-        <label class="option"><input type="radio" name="q3" value="d"> d) AWS Glue + Athena + QuickSight</label>
-    </div>
-    </fieldset>
+<div class="question">
+<p><strong>2.</strong> Què és el AWS Cloud Adoption Framework (AWS CAF)?</p>
+<label><input type="radio" name="q2" value="a"> Un conjunt d’eines per monitorar instàncies EC2</label><br>
+<label><input type="radio" name="q2" value="b"> Un marc que guia les organitzacions en el procés d’adopció de la tecnologia al núvol</label><br>
+<label><input type="radio" name="q2" value="c"> Una plataforma per fer migracions automàtiques</label><br>
+<label><input type="radio" name="q2" value="d"> Un sistema de còpies de seguretat</label>
+</div>
 
-    <!-- 4 -->
-    <fieldset data-id="4">
-      <legend>4. T’ofereixen migrar una aplicació crítica a AWS però amb requisit de compliment normatiu que obliga a mantenir dades en un país concret. Quin enfocament és més apropiat?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q4" value="a"> a) Utilitzar regions AWS i polítiques de control d’accés per assegurar residència de dades</label>
-        <label class="option"><input type="radio" name="q4" value="b"> b) Migrar a una regió externa i encriptar a la resta</label>
-        <label class="option"><input type="radio" name="q4" value="c"> c) Replatform a serveis multi-regionals sense restriccions</label>
-        <label class="option"><input type="radio" name="q4" value="d"> d) Utilitzar Snowball per emmagatzemar localment i no migrar</label>
-      </div>
-    </fieldset>
+<div class="question">
+<p><strong>3.</strong> Quantes perspectives principals té l’AWS CAF?</p>
+<label><input type="radio" name="q3" value="a"> 3</label><br>
+<label><input type="radio" name="q3" value="b"> 4</label><br>
+<label><input type="radio" name="q3" value="c"> 6</label><br>
+<label><input type="radio" name="q3" value="d"> 8</label>
+</div>
 
-    <!-- 5 -->
-    <fieldset data-id="5">
-      <legend>5. Tens una aplicació amb pics diaris de CPU molt pronunciats. Vols pagar només per l’ús acumulat. Quina combinació d’opcions d’execució recomanes?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q5" value="a"> a) EC2 reservades amb autoscaling manuel</label>
-        <label class="option"><input type="radio" name="q5" value="b"> b) Migrar a contenedors gestionats amb ECS/Fargate i Auto Scaling</label>
-        <label class="option"><input type="radio" name="q5" value="c"> c) Mantindre on-premises i ampliar hardware</label>
-        <label class="option"><input type="radio" name="q5" value="d"> d) Utilitzar instàncies spot per totes les càrregues</label>
-      </div>
-    </fieldset>
+<div class="question">
+<p><strong>4.</strong> Quina de les següents no és una perspectiva de l’AWS CAF?</p>
+<label><input type="radio" name="q4" value="a"> Empresarial</label><br>
+<label><input type="radio" name="q4" value="b"> Governança</label><br>
+<label><input type="radio" name="q4" value="c"> Rendiment</label><br>
+<label><input type="radio" name="q4" value="d"> Seguretat</label>
+</div>
 
-    <!-- 6 -->
-    <fieldset data-id="6">
-      <legend>6. Durant una migració, detectes dependències d’app que requereixen ore-ordres de xarxa entre components (ports, latències). Quina pràctica recomanaries abans del tall?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q6" value="a"> a) Executar proves d’integració en un entorn de staging replicant xarxa i latències</label>
-        <label class="option"><input type="radio" name="q6" value="b"> b) Fer el tall en producció directament per identificar errors reals</label>
-        <label class="option"><input type="radio" name="q6" value="c"> c) Dependre només de CloudWatch per avisos després del tall</label>
-        <label class="option"><input type="radio" name="q6" value="d"> d) Eliminar dependències sense provar</label>
-      </div>
-    </fieldset>
+<div class="question">
+<p><strong>5.</strong> Quina és una raó habitual per migrar aplicacions al núvol?</p>
+<label><input type="radio" name="q5" value="a"> Reduir la connectivitat de xarxa</label><br>
+<label><input type="radio" name="q5" value="b"> Augmentar la dependència del maquinari local</label><br>
+<label><input type="radio" name="q5" value="c"> Millorar l’escalabilitat i la flexibilitat</label><br>
+<label><input type="radio" name="q5" value="d"> Limitar l’accés remot</label>
+</div>
 
-    <!-- 7 -->
-    <fieldset data-id="7">
-      <legend>7. Vols medir el cost total de propietat (TCO) abans i després de migrar. Quina eina AWS et dona estimacions i recomanacions de cost?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q7" value="a"> a) AWS Cost Explorer i AWS TCO Calculator</label>
-        <label class="option"><input type="radio" name="q7" value="b"> b) CloudWatch i CloudTrail</label>
-        <label class="option"><input type="radio" name="q7" value="c"> c) Trusted Advisor i Inspector</label>
-        <label class="option"><input type="radio" name="q7" value="d"> d) SNS i SQS</label>
-      </div>
-    </fieldset>
+<div class="question">
+<p><strong>6.</strong> Quin dispositiu d’AWS s’utilitza per transferir grans volums de dades?</p>
+<label><input type="radio" name="q6" value="a"> AWS Lambda</label><br>
+<label><input type="radio" name="q6" value="b"> AWS Snowball</label><br>
+<label><input type="radio" name="q6" value="c"> Amazon S3 Glacier</label><br>
+<label><input type="radio" name="q6" value="d"> AWS CloudTrail</label>
+</div>
 
-    <!-- 8 -->
-    <fieldset data-id="8">
-      <legend>8. Tens una aplicació legacy que necessita sockets persistents. Quina opció AWS és la més adequada per mantenir connexions long-lived amb escalabilitat?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q8" value="a"> a) AWS API Gateway WebSocket + Lambdas</label>
-        <label class="option"><input type="radio" name="q8" value="b"> b) ALB amb instàncies EC2 stateful</label>
-        <label class="option"><input type="radio" name="q8" value="c"> c) S3 + CloudFront</label>
-        <label class="option"><input type="radio" name="q8" value="d"> d) Kinesis Data Streams</label>
-      </div>
-    </fieldset>
+<div class="question">
+<p><strong>7.</strong> Quina és la capacitat aproximada d’un AWS Snowcone?</p>
+<label><input type="radio" name="q7" value="a"> Uns 8 TB</label><br>
+<label><input type="radio" name="q7" value="b"> Uns 50 TB</label><br>
+<label><input type="radio" name="q7" value="c"> Uns 100 TB</label><br>
+<label><input type="radio" name="q7" value="d"> Més d’1 PB</label>
+</div>
 
-    <!-- 9 -->
-    <fieldset data-id="9">
-      <legend>9. En la fase de “migrar” vols automatitzar la creació d’infraestructura reproducible per entorns. Quina práctica d’Infraestructura com a Codi (IaC) recomanes?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q9" value="a"> a) Plantilles CloudFormation amb stacks i change sets</label>
-        <label class="option"><input type="radio" name="q9" value="b"> b) Crear manualment amb la consola per cada entorn</label>
-        <label class="option"><input type="radio" name="q9" value="c"> c) Usar només scripts bash locals</label>
-        <label class="option"><input type="radio" name="q9" value="d"> d) Fer Terraform però sense control de versions</label>
-      </div>
-    </fieldset>
+<div class="question">
+<p><strong>8.</strong> Quin dispositiu d’AWS s’utilitza per migracions a escala d’exabytes?</p>
+<label><input type="radio" name="q8" value="a"> AWS Snowball Edge</label><br>
+<label><input type="radio" name="q8" value="b"> AWS Snowmobile</label><br>
+<label><input type="radio" name="q8" value="c"> AWS Snowcone</label><br>
+<label><input type="radio" name="q8" value="d"> AWS EBS</label>
+</div>
 
-    <!-- 10 -->
-    <fieldset data-id="10">
-      <legend>10. Vols migrar l’aplicació i aprofitar ML per analitzar logs; quina arquitectura mínima recomanaries per pipeline d’ingestió i entrenament?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q10" value="a"> a) Ingesta amb Kinesis Data Streams, emmagatzematge a S3, entrenament amb Sagemaker</label>
-        <label class="option"><input type="radio" name="q10" value="b"> b) Enviar logs a CloudWatch i entrenar amb EC2 manual</label>
-        <label class="option"><input type="radio" name="q10" value="c"> c) Emmagatzemar a EBS i analitzar off-line</label>
-        <label class="option"><input type="radio" name="q10" value="d"> d) Capturar a SNS i processar amb RDS</label>
-      </div>
-    </fieldset>
+<div class="question">
+<p><strong>9.</strong> Quin és un dels sis factors clau d’una estratègia de migració a AWS?</p>
+<label><input type="radio" name="q9" value="a"> Simplificar la facturació elèctrica</label><br>
+<label><input type="radio" name="q9" value="b"> Formar els equips i desenvolupar habilitats</label><br>
+<label><input type="radio" name="q9" value="c"> Reduir el nombre d’usuaris finals</label><br>
+<label><input type="radio" name="q9" value="d"> Eliminar la gestió de seguretat</label>
+</div>
 
-    <!-- 11 -->
-    <fieldset data-id="11">
-      <legend>11. Tens restriccions d’ample de banda durant migració. Per transferir grans volums amb mínim impacte a la xarxa, quina opció seria la millor?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q11" value="a"> a) Usar Direct Connect per transferir dades en temps real</label>
-        <label class="option"><input type="radio" name="q11" value="b"> b) Utilitzar Snowball / Snowcone per import físic de dades</label>
-        <label class="option"><input type="radio" name="q11" value="c"> c) Fer rsync per internet sense compressió</label>
-        <label class="option"><input type="radio" name="q11" value="d"> d) Esperar que la xarxa millori espontàniament</label>
-      </div>
-    </fieldset>
+<div class="question">
+<p><strong>10.</strong> Quin avantatge té utilitzar AWS Snowcone respecte a Snowmobile?</p>
+<label><input type="radio" name="q10" value="a"> Major capacitat</label><br>
+<label><input type="radio" name="q10" value="b"> Més portabilitat i ús en entorns remots</label><br>
+<label><input type="radio" name="q10" value="c"> Cost més elevat però més segur</label><br>
+<label><input type="radio" name="q10" value="d"> Necessita connexió contínua a Internet</label>
+</div>
 
-    <!-- 12 -->
-    <fieldset data-id="12">
-      <legend>12. Quin és el major risc en fer un “lift-and-shift” sense posterior optimització?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q12" value="a"> a) Millora de seguretat immediata</label>
-        <label class="option"><input type="radio" name="q12" value="b"> b) Costos elevats operacionals i falta d’aprofitament de serveis gestionats</label>
-        <label class="option"><input type="radio" name="q12" value="c"> c) Reducció de latència assegurada</label>
-        <label class="option"><input type="radio" name="q12" value="d"> d) Eliminació de backups</label>
-      </div>
-    </fieldset>
+<!-- Preguntes 11-20 -->
+<div class="question">
+<p><strong>11.</strong> Quin dels següents serveis impulsa la innovació a AWS?</p>
+<label><input type="radio" name="q11" value="d"> Tots els anteriors</label><br>
+<label><input type="radio" name="q11" value="a"> Amazon S3</label><br>
+<label><input type="radio" name="q11" value="b"> AWS Lambda</label><br>
+<label><input type="radio" name="q11" value="c"> Amazon EC2 Spot</label>
+</div>
 
-    <!-- 13 -->
-    <fieldset data-id="13">
-      <legend>13. Quina estratègia de validació post-migració és més robusta per garantir que una aplicació compleix SLA abans d’apagar l’antic sistema?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q13" value="a"> a) Fer una bateria de proves funcionals i de càrrega en paral·lel amb trànsit reals (canary o blue/green)</label>
-        <label class="option"><input type="radio" name="q13" value="b"> b) Confiar només en tests automatitzats sense trànsit real</label>
-        <label class="option"><input type="radio" name="q13" value="c"> c) Apagar immediatament l’antic sistema després de la migració</label>
-        <label class="option"><input type="radio" name="q13" value="d"> d) Validar només amb l’equip de desenvolupament intern</label>
-      </div>
-    </fieldset>
+<div class="question">
+<p><strong>12.</strong> El AWS CAF ajuda principalment les empreses a...</p>
+<label><input type="radio" name="q12" value="a"> Automatitzar còpies de seguretat</label><br>
+<label><input type="radio" name="q12" value="b"> Crear un pla de migració estructurat</label><br>
+<label><input type="radio" name="q12" value="c"> Millorar el màrqueting digital</label><br>
+<label><input type="radio" name="q12" value="d"> Controlar la despesa energètica</label>
+</div>
 
-    <!-- 14 -->
-    <fieldset data-id="14">
-      <legend>14. Vols avaluar i optimitzar costos per bases de dades després de migrar. Quina acció és més efectiva?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q14" value="a"> a) Substituir totes les instàncies per la família més cara per rendiment</label>
-        <label class="option"><input type="radio" name="q14" value="b"> b) Analitzar patron de càrrega i migrar a RDS / Aurora amb right-sizing i opcions reserved/compute savings</label>
-        <label class="option"><input type="radio" name="q14" value="c"> c) Deixar-ho tot en EC2 amb discos magnètics</label>
-        <label class="option"><input type="radio" name="q14" value="d"> d) Eliminar la retenció de còpies de seguretat</label>
-      </div>
-    </fieldset>
+<div class="question">
+<p><strong>13.</strong> Quin d’aquests no és un benefici de la migració al núvol?</p>
+<label><input type="radio" name="q13" value="a"> Escalabilitat</label><br>
+<label><input type="radio" name="q13" value="b"> Resiliència</label><br>
+<label><input type="radio" name="q13" value="c"> Inflexibilitat</label><br>
+<label><input type="radio" name="q13" value="d"> Innovació</label>
+</div>
 
-    <!-- 15 -->
-    <fieldset data-id="15">
-      <legend>15. Per accelerar la innovació, vols proporcionar entorns sandbox ràpids i segurs per equips. Quina eina d’AWS facilita desplegament governat de múltiples comptes i polítiques?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q15" value="a"> a) AWS Control Tower</label>
-        <label class="option"><input type="radio" name="q15" value="b"> b) AWS Glue</label>
-        <label class="option"><input type="radio" name="q15" value="c"> c) AWS Batch</label>
-        <label class="option"><input type="radio" name="q15" value="d"> d) AWS Step Functions</label>
-      </div>
-    </fieldset>
+<div class="question">
+<p><strong>14.</strong> Quin servei facilita el traspàs de bases de dades cap al núvol?</p>
+<label><input type="radio" name="q14" value="a"> AWS DataSync</label><br>
+<label><input type="radio" name="q14" value="b"> AWS DMS (Database Migration Service)</label><br>
+<label><input type="radio" name="q14" value="c"> AWS Snowcone</label><br>
+<label><input type="radio" name="q14" value="d"> Amazon QuickSight</label>
+</div>
 
-    <!-- 16 -->
-    <fieldset data-id="16">
-      <legend>16. T’ofereixen migrar una aplicació amb components ETL pesats. Quin enfocament serverless pot reduir cost operatiu i simplificar escalat?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q16" value="a"> a) Mantindre un cluster EMR permanent</label>
-        <label class="option"><input type="radio" name="q16" value="b"> b) Re-implementar pipelines amb AWS Glue jobs sota demanda i S3 per landing</label>
-        <label class="option"><input type="radio" name="q16" value="c"> c) Executar ETL en instàncies EC2 gestionades manualment</label>
-        <label class="option"><input type="radio" name="q16" value="d"> d) Exportar a CSV i processar localment</label>
-      </div>
-    </fieldset>
+<div class="question">
+<p><strong>15.</strong> Quina acció forma part d’una estratègia de migració híbrida?</p>
+<label><input type="radio" name="q15" value="b"> Mantenir part de la infraestructura local mentre es migra progressivament al núvol</label><br>
+<label><input type="radio" name="q15" value="a"> Eliminar completament el centre de dades local</label><br>
+<label><input type="radio" name="q15" value="c"> Migrar només aplicacions de mòbil</label><br>
+<label><input type="radio" name="q15" value="d"> Usar serveis locals sense connexió</label>
+</div>
 
-    <!-- 17 -->
-    <fieldset data-id="17">
-      <legend>17. Quin concepte del Well-Architected Framework és clau durant la fase d’innovació per garantir resiliència i recuperació?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q17" value="a"> a) Excel·lència operativa</label>
-        <label class="option"><input type="radio" name="q17" value="b"> b) Fiabilitat (reliability)</label>
-        <label class="option"><input type="radio" name="q17" value="c"> c) Optimització de costos</label>
-        <label class="option"><input type="radio" name="q17" value="d"> d) Seguretat només</label>
-      </div>
-    </fieldset>
+<div class="question">
+<p><strong>16.</strong> Quina és una de les innovacions que AWS promou?</p>
+<label><input type="radio" name="q16" value="a"> Servidors físics redundants</label><br>
+<label><input type="radio" name="q16" value="b"> Intel·ligència artificial i aprenentatge automàtic</label><br>
+<label><input type="radio" name="q16" value="c"> Xarxes d’àrea local tancades</label><br>
+<label><input type="radio" name="q16" value="d"> Augment del paper administratiu</label>
+</div>
 
-    <!-- 18 -->
-    <fieldset data-id="18">
-      <legend>18. Tens una aplicació amb picos imprevisibles. Quina arquitectura d’innovació permet escalar processament d’esdeveniments amb latència baixa i cost optimitzat?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q18" value="a"> a) Serverless amb Lambda + API Gateway + DynamoDB on-demand</label>
-        <label class="option"><input type="radio" name="q18" value="b"> b) Monolític en EC2 amb escalat manual</label>
-        <label class="option"><input type="radio" name="q18" value="c"> c) EBS amb snapshot freqüent</label>
-        <label class="option"><input type="radio" name="q18" value="d"> d) RDS provisionat amb alta memòria sense autoscaling</label>
-      </div>
-    </fieldset>
+<div class="question">
+<p><strong>17.</strong> Quin servei permet automatitzar processos sense gestionar servidors?</p>
+<label><input type="radio" name="q17" value="a"> AWS Lambda</label><br>
+<label><input type="radio" name="q17" value="b"> Amazon EBS</label><br>
+<label><input type="radio" name="q17" value="c"> AWS Snowball</label><br>
+<label><input type="radio" name="q17" value="d"> Amazon S3 Glacier</label>
+</div>
 
-    <!-- 19 -->
-    <fieldset data-id="19">
-      <legend>19. Per a una migració segura, vols xifrar dades en trànsit i reposo i gestionar claus pròpies. Quina solució AWS utilitzaries?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q19" value="a"> a) AWS KMS amb clau administrada pel client (CMK) i TLS per trànsit</label>
-        <label class="option"><input type="radio" name="q19" value="b"> b) Dependre només d’encriptació de l’aplicació sense KMS</label>
-        <label class="option"><input type="radio" name="q19" value="c"> c) Emmagatzemar claus en S3 sense xifrar</label>
-        <label class="option"><input type="radio" name="q19" value="d"> d) Utilitzar només contrasenyes planes en configuració</label>
-      </div>
-    </fieldset>
+<div class="question">
+<p><strong>18.</strong> Quina és la funció principal de AWS DataSync?</p>
+<label><input type="radio" name="q18" value="a"> Sincronitzar dades entre emmagatzematges locals i AWS</label><br>
+<label><input type="radio" name="q18" value="b"> Encriptar dades en repòs</label><br>
+<label><input type="radio" name="q18" value="c"> Analitzar dades massives</label><br>
+<label><input type="radio" name="q18" value="d"> Crear còpies de seguretat fora de línia</label>
+</div>
 
-    <!-- 20 -->
-    <fieldset data-id="20">
-      <legend>20. Quin indicador és la millor mètrica per validar que una migració ha millorat l’experiència d’usuari d’una aplicació web?</legend>
-      <div class="options">
-        <label class="option"><input type="radio" name="q20" value="a"> a) Temps de resposta (latència) a 95th/99th percentil</label>
-        <label class="option"><input type="radio" name="q20" value="b"> b) Nombre d’instàncies provisionades</label>
-        <label class="option"><input type="radio" name="q20" value="c"> c) Nombre de serveis AWS usats</label>
-        <label class="option"><input type="radio" name="q20" value="d"> d) Nombre de commits al repositori</label>
-      </div>
-    </fieldset>
+<div class="question">
+<p><strong>19.</strong> En el context del CAF, la perspectiva de “Governança” tracta de...</p>
+<label><input type="radio" name="q19" value="b"> Gestionar finances, compliment i riscos</label><br>
+<label><input type="radio" name="q19" value="a"> Dissenyar aplicacions escalables</label><br>
+<label><input type="radio" name="q19" value="c"> Optimitzar la seguretat de xarxa</label><br>
+<label><input type="radio" name="q19" value="d"> Migrar dades grans</label>
+</div>
 
-    <div class="controls">
-      <button type="button" id="check">Corregir</button>
-      <button type="button" id="reset" class="secondary">Reiniciar</button>
-    </div>
+<div class="question">
+<p><strong>20.</strong> Quina afirmació descriu millor la relació entre migració i innovació?</p>
+<label><input type="radio" name="q20" value="b"> La migració permet establir una base per innovar més ràpidament</label><br>
+<label><input type="radio" name="q20" value="a"> Migrar al núvol és només una actualització tècnica sense efectes innovadors</label><br>
+<label><input type="radio" name="q20" value="c"> Innovar i migrar són processos independents</label><br>
+<label><input type="radio" name="q20" value="d"> La innovació només passa abans de migrar</label>
+</div>
 
-    <div id="output" class="hidden"></div>
+<button type="button" onclick="checkAnswers()">Comprovar respostes</button>
+</form>
 
-  </form>
+<div id="result" class="result"></div>
 
-  <script>
-    (function(){
-      const answers = {
-        q1:{ans:'d', explain:'Replatform ofereix un equilibri: redueix risc respecte a refactor complet, però aprofita serveis gestionats (p. ex. migrar BD a RDS, usar ALB) per obtenir benefici ràpid sense redisseny complet.'},
-        q2:{ans:'b', explain:'AWS DMS amb change data capture (CDC) permet replicació contínua, validació en paral·lel i tall final amb mínim downtime — patró recomanat per migracions de DB crítiques.'},
-        q3:{ans:'a', explain:'Application Discovery Service descobreix dependències, Migration Hub centralitza l’estat i Server Migration Service (o VM Import/Server Migration) orquestra el moviment de VM heterogènies.'},
-        q4:{ans:'a', explain:'Utilitzar regions específiques i polítiques (S3 data residency, KMS, IAM, SCP) és necessari per complir residència de dades. Cal seleccionar la regió i configurar controls d’accés i auditories.'},
-        q5:{ans:'b', explain:'ECS/Fargate permet pagar per consum de CPU/memòria per task i escalar automàticament; és més adequat per pics que instàncies provisionades.'},
-        q6:{ans:'a', explain:'Provar en entorn de staging que repliqui topologia i latències (testing de xarxa, chaos testing) permet detectar i corregir dependències abans de tallar producció.'},
-        q7:{ans:'a', explain:'AWS Cost Explorer ofereix anàlisi d’ús i tendències; l’AWS TCO Calculator ajuda a comparar costos entre entorns on-prem vs AWS.'},
-        q8:{ans:'a', explain:'API Gateway (WebSocket) amb Lambda o amb backend gestionat ofereix connexions WebSocket escalables sense mantenir instàncies stateful; adequat per connexions long-lived i escala automàtica.'},
-        q9:{ans:'a', explain:'CloudFormation (o Terraform) com IaC permet reproducibilitat, control de versions i change sets per desplegaments segurs i auditories.'},
-        q10:{ans:'a', explain:'Kinesis per ingestió en temps real, S3 per emmagatzematge escalable i SageMaker per entrenament és una arquitectura típica i robusta per ML en AWS.'},
-        q11:{ans:'b', explain:'Snowball / Snowcone (o Snowmobile per exabytes) transfereixen dades físicament i eviten saturar l’ample de banda de la xarxa en migracions massives.'},
-        q12:{ans:'b', explain:'Lift-and-shift sense posterior optimització sovint genera costos operacionals més alts perquè no s’aprofiten serveis gestionats ni right-sizing.'},
-        q13:{ans:'a', explain:'Canary o blue/green deployment amb trànsit real i proves de càrrega garanteixen que SLA es compleixen abans de desactivar sistemes antics.'},
-        q14:{ans:'b', explain:'Analitzar patrons d’ús i migrar a serveis gestionats (RDS/Aurora) amb right-sizing, opcions de reservació o Savings Plans redueix costos mantenint rendiment.'},
-        q15:{ans:'a', explain:'AWS Control Tower facilita la creació de comptes governats, guardrails i plantilla d’entorn per accelerar sandboxing i mantenir governança.'},
-        q16:{ans:'b', explain:'Glue (serverless ETL) i S3 per landing redueixen cost operatiu en comparació amb mantenir clústers EMR permanents per processos periòdics.'},
-        q17:{ans:'b', explain:'La fiabilitat (reliability) del Well-Architected Framework se centra en dissenyar sistemes tolerants a fallades i amb capacitat de recuperació — essencial per innovar amb confiança.'},
-        q18:{ans:'a', explain:'Arquitectura serverless (Lambda + API Gateway + DynamoDB on-demand) s’acobla bé a pics imprevisibles: escala automàtica i pagament per ús amb latències baixes.'},
-        q19:{ans:'a', explain:'AWS KMS amb una CMK gestionada pel client (customer managed key) combinada amb TLS xifra dades en repòs i trànsit i proporciona control de rotació i accés.'},
-        q20:{ans:'a', explain:'Percentils (95th/99th) de latència reflecteixen experiència real d’usuaris — són millors indicadors d’experiència que nombres d’instàncies o commits.'}
-      };
-
-      const form = document.getElementById('quiz');
-      const out = document.getElementById('output');
-      const checkBtn = document.getElementById('check');
-      const resetBtn = document.getElementById('reset');
-
-      function getSelected(name){
-        const els = form.elements[name];
-        if(!els) return null;
-        for(const el of els){ if(el.checked) return el.value; }
-        return null;
+<script>
+function checkAnswers() {
+  const correct = {
+    q1:'c', q2:'b', q3:'c', q4:'c', q5:'c', q6:'b', q7:'a', q8:'b', q9:'b', q10:'b',
+    q11:'d', q12:'b', q13:'c', q14:'b', q15:'b', q16:'b', q17:'a', q18:'a', q19:'b', q20:'b'
+  };
+  const explanations = {
+    q1:'Migrar al núvol permet augmentar l’agilitat i la innovació.',
+    q2:'L’AWS CAF és un marc que ajuda a planificar l’adopció del núvol.',
+    q3:'L’AWS CAF té sis perspectives principals.',
+    q4:'“Rendiment” no és una de les perspectives del CAF.',
+    q5:'Una de les raons principals és millorar escalabilitat i flexibilitat.',
+    q6:'AWS Snowball és un dispositiu físic per transferir grans volums de dades.',
+    q7:'AWS Snowcone té aproximadament 8 TB de capacitat.',
+    q8:'AWS Snowmobile s’usa per transferències a escala d’exabytes.',
+    q9:'Formar els equips és clau per a una migració amb èxit.',
+    q10:'Snowcone és petit i portàtil, ideal per entorns remots.',
+    q11:'Tots els serveis mencionats fomenten la innovació.',
+    q12:'El CAF ajuda a crear un pla estructurat de migració.',
+    q13:'La inflexibilitat és l’oposat d’un benefici del núvol.',
+    q14:'AWS DMS permet migrar bases de dades de manera eficient.',
+    q15:'Una estratègia híbrida combina local i núvol progressivament.',
+    q16:'AWS impulsa la innovació mitjançant IA i machine learning.',
+    q17:'AWS Lambda executa codi sense necessitat de servidors.',
+    q18:'AWS DataSync sincronitza dades entre entorns locals i AWS.',
+    q19:'La governança tracta la gestió financera, compliment i riscos.',
+    q20:'La migració crea la base per innovar més ràpidament.'
+  };
+  let score = 0;
+  let output = "";
+  for (let q in correct) {
+    const ans = document.querySelector('input[name="'+q+'"]:checked');
+    if (ans) {
+      if (ans.value === correct[q]) {
+        score++;
+        output += `<p><strong>${q.toUpperCase()} correcta!</strong> ✅ ${explanations[q]}</p>`;
+      } else {
+        output += `<p><strong>${q.toUpperCase()} incorrecta.</strong> ❌ ${explanations[q]}</p>`;
       }
+    } else {
+      output += `<p><strong>${q.toUpperCase()} sense resposta.</strong></p>`;
+    }
+  }
+  document.getElementById('result').innerHTML = `<h3>Puntuació final: ${score}/20</h3>` + output;
+}
+</script>
 
-      function clearHighlights(){
-        document.querySelectorAll('fieldset').forEach(fs=>{
-          fs.classList.remove('correct','wrong');
-          fs.querySelectorAll('.explain')?.forEach(n=>n.remove());
-        });
-        out.className='hidden';
-        out.innerHTML='';
-      }
-
-      checkBtn.addEventListener('click',()=>{
-        clearHighlights();
-        let score = 0; let total = 0; let unanswered = 0;
-        for(let i=1;i<=20;i++){
-          const name = 'q'+i; total++;
-          const selected = getSelected(name);
-          if(!selected) unanswered++;
-          const field = document.querySelector('fieldset[data-id="'+i+'"]');
-          const correct = answers[name].ans;
-          const expl = document.createElement('div');
-          expl.className = 'explain';
-          expl.innerHTML = '<strong>Resposta correcta:</strong> ' + correct + '. ' + answers[name].explain;
-          if(selected === correct){
-            score++; field.classList.add('correct');
-            // show small positive note
-            expl.insertAdjacentHTML('afterbegin','<em>✅ Has triat la resposta correcta.</em><br>');
-          } else {
-            field.classList.add('wrong');
-            expl.insertAdjacentHTML('afterbegin','<em>❌ Resposta incorrecta.</em><br>');
-            if(!selected) expl.insertAdjacentHTML('afterbegin','<em>⚠️ No has contestat aquesta pregunta.</em><br>');
-          }
-          field.appendChild(expl);
-        }
-
-        out.className = 'result';
-        out.innerHTML = '<div class="score">Puntuació: ' + score + ' / ' + total + '</div>' +
-                        (unanswered>0?('<div style="margin-top:8px;color:#334155">No contestades: '+unanswered+'</div>'):'') +
-                        '<div class="answer-key">Revisa les explicacions sota cada bloc per aprofundir en cada tema.</div>';
-        out.scrollIntoView({behavior:'smooth'});
-      });
-
-      resetBtn.addEventListener('click',()=>{
-        form.reset();
-        document.querySelectorAll('.explain').forEach(n=>n.remove());
-        document.querySelectorAll('fieldset').forEach(fs=>fs.classList.remove('correct','wrong'));
-        out.className='hidden';
-        out.innerHTML='';
-        window.scrollTo({top:0,behavior:'smooth'});
-      });
-    })();
-  </script>
-
-  <footer>
-    Nota: les preguntes són d’un nivell avançat i serveixen per preparar-te per situacions reals i exàmens de nivell superior. Pots copiar aquest fitxer i obrir-lo localment al navegador.
-  </footer>
 </body>
 </html>
-
